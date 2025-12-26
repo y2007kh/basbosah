@@ -20,7 +20,7 @@ body {
 /* ================== BOX ================== */
 .box {
     width: 88vw;                /* يملأ أغلب الشاشة */
-    max-width: 520px;           /* زيادة قليلة لتناسب شاشة Realme C75 (6.78 إنش) */
+    max-width: 540px;           /* زيادة قليلة لتناسب شاشة Realme C75 (6.78 إنش) */
     padding: 34px 28px;
 
     background: rgba(255, 255, 255, 0.68);
@@ -35,14 +35,14 @@ body {
 
 /* ================== TITLES ================== */
 #truthTitle {
-    font-size: clamp(24px, 6vw, 28px);  /* زيادة لجعل العنوان أكبر */
+    font-size: clamp(26px, 8vw, 30px);  /* زيادة لجعل العنوان أكبر */
     opacity: 0.6;
-    margin-bottom: 22px;
+    margin-bottom: 26px;
 }
 
 /* ================== TEXT ================== */
 .fade-text {
-    font-size: clamp(26px, 6.5vw, 30px);  /* زيادة للنص الرئيسي */
+    font-size: clamp(26px, 7vw, 34px);  /* زيادة للنص الرئيسي */
     line-height: 1.9;
     opacity: 0;
     transform: translateY(8px);
@@ -55,7 +55,7 @@ body {
 }
 
 .fade-line {
-    font-size: clamp(24px, 6vw, 28px);  /* زيادة للسطر الآخر */
+    font-size: clamp(26px, 8vw, 32px);  /* زيادة للسطر الآخر */
     opacity: 0;
     transform: translateY(8px);
     transition: opacity 1.4s ease, transform 1.4s ease;
@@ -69,13 +69,13 @@ body {
 /* ================== SOFT TEXT ================== */
 .soft {
     color: #666;
-    font-size: clamp(18px, 4.5vw, 20px);  /* زيادة للنص الخفيف */
+    font-size: clamp(24px, 5.5vw, 30px);  /* زيادة للنص الخفيف */
 }
 
 /* ================== BUTTON ================== */
 .btn {
-    margin-top: 22px;
-    padding: 16px 40px;  /* زيادة padding قليلاً للزر */
+    margin-top: 26px;
+    padding: 20px 46px;  /* زيادة padding قليلاً للزر */
 
     background: #8e6bbf;
     color: #ffffff;
@@ -83,7 +83,7 @@ body {
     border: none;
     border-radius: 30px;
 
-    font-size: clamp(19px, 5vw, 21px);  /* زيادة للزر */
+    font-size: clamp(20px, 6vw, 23px);  /* زيادة للزر */
     font-family: "Cairo", sans-serif;
 
     cursor: pointer;
@@ -125,7 +125,7 @@ body {
 /* ================== BUTTERFLY ================== */
 .butterfly {
     position: fixed;
-    width: 70px;      /* أكبر شوية للموبايل */
+    width: 80px;      /* أكبر شوية للموبايل */
     height: auto;
     pointer-events: none;
     animation: flap 0.5s infinite alternate;
@@ -153,3 +153,4 @@ body {
         transform: translateY(0);
     }
 }
+
