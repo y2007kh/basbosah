@@ -174,21 +174,20 @@ canvas {
     }
 }
 
-/* ====== Nokia Controls ====== */
+/* ====== Nokia Controls (D-pad Layout) ====== */
 .nokia-controls {
     margin: 20px auto;
-    width: 280px; /* زيادة العرض لتناسب الأزرار الأكبر */
-    display: flex;
-    flex-direction: column;
+    display: grid; /* استخدام grid لترتيب D-pad */
+    grid-template-columns: 1fr 1fr 1fr; /* 3 أعمدة */
+    grid-template-rows: auto auto auto; /* 3 صفوف */
+    gap: 10px; /* مسافة بين الأزرار */
+    justify-items: center; /* توسيط الأزرار */
     align-items: center;
     user-select: none;
 }
 
 .nokia-controls .middle {
-    display: flex;
-    justify-content: space-between;
-    width: 280px; /* زيادة لتناسب */
-    margin: 8px 0;
+    display: contents; /* لتوزيع الأزرار في الشبكة */
 }
 
 .btn {
@@ -199,7 +198,7 @@ canvas {
     font-size: 24px; /* زيادة للرموز داخل الأزرار */
     border: none;
     cursor: pointer;
-    border-radius: 50%; /* تغيير إلى دائري لتسهيل اللمس */
+    border-radius: 50%; /* دائري لتسهيل اللمس */
 
     display: flex;
     align-items: center;
