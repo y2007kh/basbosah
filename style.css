@@ -1,25 +1,24 @@
 body {
     margin: 0;
-    min-height: 100vh;
+    min-height: 150vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-family: 'IBM Plex Arabic', sans-serif;
-
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
     background: linear-gradient(
         180deg,
         #f3e8ff 0%,
         #fde7f3 100%
     );
 
-    color: #2f2f2f;
+    color: #222;
     animation: pageFade 0.6s ease;
 }
 
 /* ================== BOX ================== */
 .box {
-    width: 88vw;                /* يملأ أغلب الشاشة */
+    width: 90vw;                /* يملأ أغلب الشاشة */
     max-width: 540px;           /* زيادة قليلة لتناسب شاشة Realme C75 (6.78 إنش) */
     padding: 34px 28px;
 
@@ -35,9 +34,9 @@ body {
 
 /* ================== TITLES ================== */
 #truthTitle {
-    font-size: clamp(26px, 8vw, 30px);  /* زيادة لجعل العنوان أكبر */
+    font-size: clamp(28px, 12vw, 36px);  /* زيادة لجعل العنوان أكبر */
     opacity: 0.6;
-    margin-bottom: 26px;
+    margin-bottom: 30px;
 }
 
 /* ================== TEXT ================== */
@@ -68,7 +67,7 @@ body {
 
 /* ================== SOFT TEXT ================== */
 .soft {
-    color: #666;
+    color: #75D2F3;
     font-size: clamp(24px, 5.5vw, 30px);  /* زيادة للنص الخفيف */
 }
 
@@ -153,4 +152,5 @@ body {
         transform: translateY(0);
     }
 }
+
 
