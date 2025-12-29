@@ -13,9 +13,11 @@
         </p>
 
         <p class="soft">اللعبة دي بالرغم انها بسيطه بس انا اللي بانيها من اول للاخر وخدت مني مجهود وتعب كبير كان ممكن اجيبها جاهزة لكن انا معملتش كدا </p>
-<button class="btn" onclick="window.open('snake/snake.html','Snake','width=450,height=500')">
+<button class="btn" onclick="openGame()">
     يلا نبدأ 🐍
 </button>
+
+<iframe id="gameIframe" src="snake/snake.html" style="display:none;"></iframe>
 
 <button class="btn"
  onclick="butterflies(event.clientX, event.clientY);
@@ -30,4 +32,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
