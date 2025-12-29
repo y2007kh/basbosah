@@ -49,14 +49,17 @@ function flowers() {
     }
 }
 
+function openGame(){
+    const iframe = document.getElementById("gameIframe");
+    iframe.style.display = "block";
+}
+
 window.addEventListener("message", function (e) {
     if (e.data === "closeGame") {
         const iframe = document.getElementById("gameIframe");
-        if (iframe) {
-            iframe.style.display = "none";
-        }
+        iframe.style.display = "none";
     }
-})
+});
 
 
 function butterflies(x, y) {
@@ -89,4 +92,5 @@ function butterflies(x, y) {
         setTimeout(() => b.remove(), 2500);
     }
 }
+
 
