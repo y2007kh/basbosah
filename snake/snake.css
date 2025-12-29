@@ -25,6 +25,46 @@ canvas {
     margin-bottom: 10px;
 }
 
+/* ================== Swipe Hint ================== */
+.swipe-hint {
+    margin: 20px 0 30px;
+    text-align: center;
+    opacity: 0.85;
+    font-size: 18px;
+}
+
+.swipe-hint .hand {
+    font-size: 36px;
+    animation: swipeMove 1.6s infinite ease-in-out;
+}
+
+.swipe-hint .arrows {
+    letter-spacing: 6px;
+    font-size: 20px;
+    margin-top: 6px;
+}
+
+.swipe-hint p {
+    margin-top: 6px;
+    font-size: 16px;
+    color: #2f4f2f;
+}
+
+/* حركة الإيد */
+@keyframes swipeMove {
+    0% {
+        transform: translateX(0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateX(18px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 0.6;
+    }
+}
 
 
 /* ================== السكور ================== */
@@ -212,6 +252,7 @@ canvas {
 button {
     touch-action: manipulation;
 }
+
 
 
 
