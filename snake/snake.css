@@ -4,7 +4,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: monospace;
-    background: #e0f2f1;
+    background: #286D4D;
     margin: 0;
     padding: 6px;
     height: 100vh;
@@ -69,13 +69,13 @@ canvas {
 
 /* ================== السكور ================== */
 #score {
-    font-size: 20px;
+    font-size: 28px;
     margin: 8px 0;
 }
 
 #scoreMessage {
-    font-size: 18px;
-    color: #ff4757;
+    font-size: 24px;
+    color: #8C47FF;
     font-weight: bold;
     margin-left: 6px;
     display: none;
@@ -116,7 +116,7 @@ canvas {
 .speed-screen {
     position: fixed;
     inset: 0;
-    background: #e0f2f1;
+    background: #ABEBAB;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,14 +124,17 @@ canvas {
 }
 
 .speed-screen .title {
-    font-size: 22px;
-    margin-bottom: 14px;
+    font-size: 24px;
+    margin-bottom: 16px;
 }
 
 .speed-screen button {
+    background : #3C6A3C;
+    color : white;
     margin: 6px;
-    padding: 8px 22px;
-    font-size: 18px;
+    padding: 12px 28px;
+    font-size: 22px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
@@ -179,7 +182,6 @@ canvas {
 }
 
 /* ================== أزرار التحكم (D-Pad مظبوط) ================== */
-
 .nokia-controls {
     position: fixed;
     bottom: 12px;
@@ -202,10 +204,9 @@ canvas {
 .btn.right { grid-area: right; }
 .btn.center{ grid-area: center; }
 
-
 .btn {
-    width: 80px !important;
-    height: 80px !important;
+    width: 90px !important;
+    height: 90px !important;
     font-size: 28px !important;
     border-radius: 50% !important;
     cursor: pointer;
@@ -228,8 +229,7 @@ canvas {
 .btn:active {
     transform: scale(0.88);
 }
-
-
+/* ================== الفراشات ================== */
 /* ================== الفراشات ================== */
 .butterfly {
     position: absolute;
@@ -241,7 +241,23 @@ canvas {
     pointer-events: none;
     
     animation: fly 6s ease-out forwards;
-    will-change: transform, opacity;
+    will-change: transform, opacity;  /* لتحسين الأداء */
+}
+
+/* تعريف الحركة للفراشات */
+@keyframes fly {
+    0% {
+        transform: translateX(0) translateY(0);  /* بداية: في المكان الأصلي */
+        opacity: 1;  /* مرئية تمامًا */
+    }
+    50% {
+        transform: translateX(200px) translateY(-50px);  /* منتصف: تحرك يمينًا وأعلى قليلاً */
+        opacity: 0.8;  /* بدء التلاشي */
+    }
+    100% {
+        transform: translateX(400px) translateY(-100px);  /* نهاية: تحرك أكثر وتختفي */
+        opacity: 0;  /* غير مرئية */
+    }
 }
 
 /* ================== مساعدات ================== */
@@ -252,6 +268,7 @@ canvas {
 button {
     touch-action: manipulation;
 }
+
 
 
 
