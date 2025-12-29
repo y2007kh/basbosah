@@ -268,3 +268,43 @@ window.addEventListener("keydown", e=>{
     if(e.key === "ArrowDown" && dy===0){ dx=0; dy=grid; }
 });
 
+/* ================== Swipe Controls (Mobile) ================== */
+let touchStartX = 0;
+let touchStartY = 0;
+const swipeThreshold = 30; // أقل مسافة للسحب
+
+document.addEventListener("touchstart", function (e) {
+    const touch = e.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+}, { passive: true });
+
+document.addEventListener("touchend", function (e) {
+    const touch = e.changedTouches[0];
+    const dxSwipe = touch.clientX - touchStartX;
+    const dySwipe = touch.clientY - touchStartY;
+
+    // تجاهل السحب القصير
+    if (Math.abs(dxSwipe) < swipeThreshold && Math.abs(dySwipe) < swipeThreshold) {
+        return;
+    }
+
+    // تحديد الاتجاه
+    if (Math.abs(dxSwipe) > Math.abs(dySwipe)) {
+        // أفقي
+        if (dxSwipe > 0 && dx === 0) {
+            moveRight();
+        } else if (dxSwipe < 0 && dx === 0) {
+            moveLeft();
+        }
+    } else {
+        // رأسي
+        if (dySwipe > 0 && dy === 0) {
+            moveDown();
+        } else if (dySwipe < 0 && dy === 0) {
+            moveUp();
+        }
+    }
+}, { passive: true });
+
+
