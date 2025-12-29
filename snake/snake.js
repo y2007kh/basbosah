@@ -258,7 +258,21 @@ function closeGameIframe() {
     location.href = "../game.html";
 }
 
-
+document.getElementById('up-btn').addEventListener('click', () => {
+    console.log('Up pressed');  // استبدل بكود التحكم الفعلي
+});
+document.getElementById('down-btn').addEventListener('click', () => {
+    console.log('Down pressed');
+});
+document.getElementById('left-btn').addEventListener('click', () => {
+    console.log('Left pressed');
+});
+document.getElementById('right-btn').addEventListener('click', () => {
+    console.log('Right pressed');
+});
+document.getElementById('center-btn').addEventListener('click', () => {
+    console.log('Center pressed');
+});
 
 // ================== التحكم ==================
 window.addEventListener("keydown", e=>{
@@ -306,5 +320,6 @@ document.addEventListener("touchend", function (e) {
         }
     }
 }, { passive: true });
+
 
 
