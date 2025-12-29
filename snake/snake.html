@@ -33,16 +33,20 @@
     </button>
 
     <!-- أزرار التحكم (D-pad layout) -->
-    <div class="nokia-controls hidden" id="controls">
-        <button class="btn up" onclick="moveUp()">▲</button>
-        <div class="middle">
-            <button class="btn left" onclick="moveLeft()">◀</button>
-            <button class="btn center" disabled>●</button>
-            <button class="btn right" onclick="moveRight()">▶</button>
-        </div>
-        <button class="btn down" onclick="moveDown()">▼</button>
+<div class="nokia-controls hidden" id="controls">
+
+    <div class="control-row">
+        <button class="control-btn" id="up-btn">↑</button>
     </div>
+
+    <div class="control-row">
+        <button class="control-btn" id="right-btn">→</button>
+        <button class="control-btn" id="down-btn">↓</button>
+        <button class="control-btn" id="left-btn">←</button>
+    </div>
+
 </div>
+
 
 <!-- شاشة النهاية -->
 <div id="gameOverScreen" class="game-over hidden">
@@ -54,5 +58,6 @@
 <script src="snake.js"></script>
 </body>
 </html>
+
 
 
