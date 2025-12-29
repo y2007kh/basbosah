@@ -198,6 +198,9 @@ canvas {
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
+    
+    animation: fly 6s ease-out forwards;
+    will-change: transform, opacity;
 }
 
 /* ================== مساعدات ================== */
@@ -208,4 +211,5 @@ canvas {
 button {
     touch-action: manipulation;
 }
+
 
