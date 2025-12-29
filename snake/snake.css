@@ -9,6 +9,7 @@ body {
     padding: 6px;
     height: 100vh;
     overflow: hidden;
+    touch-action: none;
 }
 
 
@@ -211,5 +212,6 @@ canvas {
 button {
     touch-action: manipulation;
 }
+
 
 
