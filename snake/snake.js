@@ -7,6 +7,7 @@ let speed = 120;
 let gameInterval = null;
 let gameRunning = false;
 let wrapMode = false; // false = يموت عند الحواف | true = يتنقل
+let isPaused = false; // حالة اللعبة (موقفة أو شغالة)
 
 
 // ================== التعبان ==================
@@ -39,20 +40,20 @@ function showScoreMessage() {
 // ================== رسائل الدعم ==================
 function getSupportMessage(score) {
     if (score === 0) return "اي الاسكور دا التعبان مات وهو جعان 🤔";
-    if (score === 1) return "بوسي واحده بس 😉🫶🏻";
-    if (score === 5) return "د اليوم اللي اتولدت فيه بسبوسه 😍";
-    if (score < 5) return "خطوات صغيرة، بس في الاتجاه الصح 🤍";
-    if (score === 8) return "ده الشهر اللي انا اتولدت فيه 🤔";
-    if (score < 10) return "واضح إنك بتتعلمي وبتحاولي 👏";
+    if (score === 1) return "😉🫶🏻 بوسي واحده بس ";
+    if (score === 5) return "😍 د اليوم اللي اتولدت فيه بسبوسه ";
+    if (score < 5) return "🤍 خطوات صغيرة، بس في الاتجاه الصح 🤍";
+    if (score === 8) return " 🤔 ده الشهر اللي انا اتولدت فيه";
+    if (score < 10) return " 👏واضح إنك بتتعلمي وبتحاولي";
     if (score === 10) return "😍 ده الشهر اللي اتولدت فيه بسبوسة";
     if (score === 16) return "ده اليوم اللي انا اتولدت فيه .";
-    if (score < 20) return "تركيزك عالي… كمّلي كده ✨";
+    if (score < 20) return "✨ تركيزك عالي… كمّلي كده ";
     if (score === 25) return "5×5=كام؟";
     if (score < 25) return "بيقولو ان اللي بيوصل لل 66 بيلاقي كنز ";
-    if (score < 35) return "أداء تحفة 💪";
+    if (score < 35) return "💪 أداء تحفة ";
     if (score < 40) return "ايوا بقي العزيمه والاصرار";
     if (score < 45) return "فيه مفاجاه مستنياكي";
-    if (score < 50) return "قربتي 💪";
+    if (score < 50) return "💪 قربتي ";
     if (score === 50) return "😩بــموت فـيكـي ";
     if (score === 51) return "عندكـ عيون احلي من عيون الموناليزااا";
     if (score < 60) return "بحـبك يا بـسبوستـي";
@@ -258,20 +259,26 @@ function closeGameIframe() {
     location.href = "../game.html";
 }
 
-document.getElementById('up-btn').addEventListener('click', () => {
-    console.log('Up pressed');  // استبدل بكود التحكم الفعلي
-});
-document.getElementById('down-btn').addEventListener('click', () => {
-    console.log('Down pressed');
-});
-document.getElementById('left-btn').addEventListener('click', () => {
-    console.log('Left pressed');
-});
-document.getElementById('right-btn').addEventListener('click', () => {
-    console.log('Right pressed');
+['up-btn','down-btn','left-btn','right-btn'].forEach(id => {
+    document.getElementById(id).addEventListener('touchstart', e => {
+        e.preventDefault();
+        if (id === 'up-btn') moveUp();
+        if (id === 'down-btn') moveDown();
+        if (id === 'left-btn') moveLeft();
+        if (id === 'right-btn') moveRight();
+    }, { passive: false });
+    
 });
 document.getElementById('center-btn').addEventListener('click', () => {
-    console.log('Center pressed');
+    if (isPaused) {
+        // إذا كانت اللعبة موقفة، نكملها
+        isPaused = false;
+        gameInterval = setInterval(gameLoop, speed); // استئناف اللوب
+    } else {
+        // إذا كانت اللعبة شغالة، نوقفها
+        isPaused = true;
+        clearInterval(gameInterval); // إيقاف اللوب
+    }
 });
 
 // ================== التحكم ==================
@@ -320,6 +327,7 @@ document.addEventListener("touchend", function (e) {
         }
     }
 }, { passive: true });
+
 
 
 
