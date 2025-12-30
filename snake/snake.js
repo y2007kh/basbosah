@@ -227,13 +227,17 @@ function endGame(){
     gameRunning = false;
     clearInterval(gameInterval);
     gameOverSound.play();
-
+    
+    // عرض رسالة Game Over
     const message = getSupportMessage(score);
-    document.getElementById("finalScore").innerText = score;
+    document.getElementById("finalScore").innerText = `النقاط: ${score}`;
     document.querySelector("#gameOverScreen p").innerText = message;
+
+    // إخفاء الشاشة الأصلية وعرض شاشة Game Over
+    document.getElementById("gameOverScreen").style.display = "block";
     document.getElementById("controls").classList.add("hidden");
     document.getElementById("gameOverScreen").classList.remove("hidden");
-    showButterflies();
+    showButterflies();a
 }
 
 // ================== إعادة التشغيل ==================
@@ -327,6 +331,7 @@ document.addEventListener("touchend", function (e) {
         }
     }
 }, { passive: true });
+
 
 
 
