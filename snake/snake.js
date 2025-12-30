@@ -207,20 +207,28 @@ function enterFullscreen() {
 }
 
 // ================== عرض الفراشات ==================
-function showButterflies(){
+    function showButterflies() {
     const count = Math.min(6 + Math.floor(score / 4), 30); // زيادة مع السكور
-    for(let i=0;i<count;i++){
+    const gameOverBox = document.querySelector("#gameOverScreen");
+    const boxRect = gameOverBox.getBoundingClientRect(); // تحديد موقع البوكس
+
+    for (let i = 0; i < count; i++) {
         const b = document.createElement("div");
         b.className = "butterfly";
-        b.style.setProperty("--x", Math.random());
-        b.style.left = Math.random() * window.innerWidth + "px";
-        b.style.top = window.innerHeight - 80 + "px";
-        b.style.animationDelay = (Math.random()*2) + "s";
+
+        // تحديد بداية ظهور الفراشة من أسفل البوكس
+        b.style.left = Math.random() * (boxRect.width) + boxRect.left + "px";  // تحديد مكان عرض الفراشة
+        b.style.top = boxRect.bottom + "px";  // وضع الفراشة أسفل البوكس
+
+        b.style.animationDelay = (Math.random() * 2) + "s";  // تأخير حركة الفراشة بشكل عشوائي
+
         document.body.appendChild(b);
 
-        setTimeout(()=> b.remove(), 5000);
+        // إزالة الفراشة بعد اكتمال الحركة
+        setTimeout(() => b.remove(), 5000);
     }
 }
+
 
 // ================== نهاية اللعبة ==================
 function endGame(){
@@ -237,7 +245,7 @@ function endGame(){
     document.getElementById("gameOverScreen").style.display = "block";
     document.getElementById("controls").classList.add("hidden");
     document.getElementById("gameOverScreen").classList.remove("hidden");
-    showButterflies();a
+    showButterflies();
 }
 
 // ================== إعادة التشغيل ==================
@@ -331,6 +339,7 @@ document.addEventListener("touchend", function (e) {
         }
     }
 }, { passive: true });
+
 
 
 
