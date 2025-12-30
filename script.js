@@ -3,7 +3,7 @@ let flowerIndex = 0;
 
 
 function flowers() {
-    const flowerShapes = ["🌸", "🌺", "🌼", "🌷", "💐", "🌹"];
+    const flowerShapes = ["🌸", "🌹", "🌼", "🌷", "🌺", "💐"];
     const colors = [
         "#ff6b81",
         "#ff9f43",
@@ -92,5 +92,13 @@ function butterflies(x, y) {
         setTimeout(() => b.remove(), 2500);
     }
 }
+
+
+    const lastLine = document.querySelector(".poem span:last-child");
+    const audioArea = document.getElementById("audioArea");
+
+    lastLine.addEventListener("animationend", () => {
+        audioArea.classList.add("show");
+    });
 
 
