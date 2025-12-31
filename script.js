@@ -108,7 +108,20 @@ function toggleSidebar() {
     } else {
         sidebar.style.left = '-250px';
     }
+
+
+    const underImages = document.querySelectorAll(".under-img");
+
+window.addEventListener("scroll", () => {
+    underImages.forEach(img => {
+        const rect = img.getBoundingClientRect();
+        if(rect.top < window.innerHeight * 0.85) {
+            img.classList.add("show");
+        }
+    });
+});
 }
+
 
 
 
