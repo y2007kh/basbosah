@@ -53,7 +53,7 @@ body {
     backdrop-filter: blur(7px);
     border-radius: 22px;
     box-shadow: 0 14px 36px rgba(150, 120, 200, 0.2);
-
+    margin: 50px auto 0;
     position: relative;   /* مهم لاحتواء أي عنصر داخلي */
     overflow: hidden;     /* يمنع أي خروج */
     text-align: center;
@@ -374,6 +374,7 @@ body {
 .social-icons img:hover {
     transform: scale(1.2);
 }
+
 
 
 
