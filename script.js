@@ -94,12 +94,15 @@ function butterflies(x, y) {
 }
 
 
-    const lastLine = document.querySelector(".poem span:last-child");
-    const audioArea = document.getElementById("audioArea");
+const lastLine = document.querySelector(".poem .last-line");
+const audioArea = document.getElementById("audioArea");
 
+if (lastLine && audioArea) {
     lastLine.addEventListener("animationend", () => {
         audioArea.classList.add("show");
     });
+}
+
 
 function toggleSidebar() {
     var sidebar = document.getElementById('sidebar');
@@ -119,6 +122,7 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
 
 
 
