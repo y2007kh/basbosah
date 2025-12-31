@@ -109,8 +109,7 @@ function toggleSidebar() {
         sidebar.style.left = '-250px';
     }
 
-
-    const underImages = document.querySelectorAll(".under-img");
+const underImages = document.querySelectorAll(".under-img");
 
 window.addEventListener("scroll", () => {
     underImages.forEach(img => {
@@ -120,7 +119,7 @@ window.addEventListener("scroll", () => {
         }
     });
 });
-}
+
 
 
 
