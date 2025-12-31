@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    min-height: 100vh;
+    min-height: 90vh;
     padding: 24px;
     display: flex;
     justify-content: center;
@@ -70,7 +70,7 @@ body {
 
 /* ================== SOFT TEXT ================== */
 .soft {
-    color: #75D2F3;
+    color: #4a3b5a;
     font-size: clamp(24px, 5.5vw, 30px);  /* زيادة للنص الخفيف */
 }
 
@@ -259,6 +259,7 @@ body {
         transform: translateY(0);
     }
 }
+
 
 
 
