@@ -309,6 +309,73 @@ body {
 
 
 
+.under-box {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.under-img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 16px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+    margin-bottom: 30px;
+}
+
+.under-img.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* السهم أسفل الصفحة */
+.down-arrow {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 20px;
+    animation: bounce 1.5s infinite;
+    color: #8e6bbf;
+}
+
+/* أنيميشن السهم */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+}
+
+
+.contact-us {
+    background-color: /*black*/  rgba(142, 107, 191, 0.85);
+    color: white;
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-radius: 22px;
+    text-align: center;
+}
+
+.contact-us h2 {
+    font-size: clamp(24px, 6vw, 30px);
+    margin-bottom: 25px;
+}
+
+.social-icons a {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+
 
 
 
