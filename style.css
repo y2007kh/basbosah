@@ -154,10 +154,10 @@ body {
 }
 
 /* تأخير ظهور كل سطر */
-.poem span:nth-child(1) { animation-delay: 4s; }
-.poem span:nth-child(2) { animation-delay: 3.7s; }
-.poem span:nth-child(3) { animation-delay: 2.5s; }
-.poem span:nth-child(4) { animation-delay: 1s; }
+.poem span:nth-child(1) { animation-delay: .5s; }
+.poem span:nth-child(2) { animation-delay: 2.5s; }
+.poem span:nth-child(3) { animation-delay: 3.5s; }
+.poem span:nth-child(4) { animation-delay: 4s; }
 
 
 /* أنيميشن */
@@ -374,6 +374,7 @@ body {
 .social-icons img:hover {
     transform: scale(1.2);
 }
+
 
 
 
