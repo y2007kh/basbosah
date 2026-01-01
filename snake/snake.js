@@ -102,7 +102,7 @@ function startGame() {
 // ================== اختيار السرعة وبدء اللعب ==================
 function setSpeedAndStart(level){
     if (level === "slow") {
-        speed = 180;
+        speed = 150;
         wrapMode = false;
     }
 
@@ -112,7 +112,7 @@ function setSpeedAndStart(level){
     }
 
     if (level === "fast") {
-        speed = 90;       // سرعة مناسبة
+        speed = 100;       // سرعة مناسبة
         wrapMode = true;  // تفعيل الانتقال
     }
 
@@ -159,8 +159,9 @@ if (wrapMode) {
 
 snake.unshift(head);
 
-    // أكل
-    if(head.x === food.x && head.y === food.y){
+
+    if (isEating(head, food)) {
+
         score++;
         eatSound.currentTime = 0;
         eatSound.play();
@@ -171,7 +172,19 @@ snake.unshift(head);
     } else {
         snake.pop();
     }
-
+    
+// 5) افحص الاصطدام بالنفس (بعد الأكل)
+for (let i = 1; i < snake.length; i++) {
+    if (head.x === snake[i].x && head.y === snake[i].y) {
+        endGame();
+        return;
+    }
+}
+        // أكل
+    function isEating(head, food) {
+    return Math.abs(head.x - food.x) < grid &&
+           Math.abs(head.y - food.y) < grid;
+}
     // رسم الأكل
     ctx.fillStyle = "#000";
     ctx.fillRect(food.x, food.y, grid, grid);
@@ -184,27 +197,17 @@ snake.unshift(head);
         ctx.strokeRect(part.x, part.y, grid, grid);
     });
 
+//function enterFullscreen() {
+  //  const el = document.documentElement;
 
-
-    // اصطدام بالنفس
-    for(let i=1;i<snake.length;i++){
-        if(head.x === snake[i].x && head.y === snake[i].y){
-            endGame();
-        }
-    }
-}
-
-function enterFullscreen() {
-    const el = document.documentElement;
-
-    if (el.requestFullscreen) {
-        el.requestFullscreen();
-    } else if (el.webkitRequestFullscreen) { // Safari
-        el.webkitRequestFullscreen();
-    } else if (el.msRequestFullscreen) { // قديم
-        el.msRequestFullscreen();
-    }
-}
+    //if (el.requestFullscreen) {
+    //    el.requestFullscreen();
+    //} else if (el.webkitRequestFullscreen) { // Safari
+      //  el.webkitRequestFullscreen();
+    //} else if (el.msRequestFullscreen) { // قديم
+      //  el.msRequestFullscreen();
+   // }
+//}
 
 // ================== عرض الفراشات ==================
     function showButterflies() {
@@ -339,6 +342,7 @@ document.addEventListener("touchend", function (e) {
         }
     }
 }, { passive: true });
+
 
 
 
