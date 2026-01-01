@@ -2,9 +2,6 @@ body {
     margin: 0;
     min-height: 90vh;
     padding: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
     background: linear-gradient(
@@ -176,10 +173,10 @@ body {
     align-items: center;
 
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(10px);
     pointer-events: none;
 
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .audio-area.show {
@@ -215,7 +212,7 @@ body {
     position: fixed;
     top: 80px; /* تحت الـ top bar */
     left: -250px;
-    width: 280px;
+    width: 250px;
     height: calc(100% - 80px);
 
     background: #8e6bbf;
@@ -309,6 +306,9 @@ body {
 
 
 .under-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 50px;
     text-align: center;
 }
@@ -373,6 +373,7 @@ body {
 .social-icons img:hover {
     transform: scale(1.2);
 }
+
 
 
 
