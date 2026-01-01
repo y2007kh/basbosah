@@ -97,23 +97,24 @@ function butterflies(x, y) {
 const lastLine = document.querySelector(".poem .last-line");
 const audioArea = document.getElementById("audioArea");
 
-if (lastLine && audioArea) {
-    lastLine.addEventListener("animationend", () => {
-        audioArea.classList.add("show");
-    });
+function showAudio() {
+    audioArea?.classList.add("show");
 }
+
+// الحل الأساسي
+setTimeout(showAudio, 2500);
+
+// لو الأنيميشن اشتغلت
+lastLine?.addEventListener("animationend", showAudio);
+lastLine?.addEventListener("transitionend", showAudio);
 
 
 
 
 function toggleSidebar() {
-    var sidebar = document.getElementById('sidebar');
-    if (sidebar.style.left === '-250px') {
-        sidebar.style.left = '0';
-    } else {
-        sidebar.style.left = '-250px';
-    }
+    document.getElementById("sidebar").classList.toggle("open");
 }
+
 const underImages = document.querySelectorAll(".under-img");
 
 window.addEventListener("scroll", () => {
@@ -124,6 +125,7 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
 
 
 
