@@ -237,19 +237,20 @@ canvas {
 
 /* ================== أزرار التحكم (D-Pad مظبوط) ================== */
 .nokia-controls {   
-    position: fixed;
-    bottom: 35vh;
-    left: 55%;
-    transform: translateX(-45%);
+    position: relative;
+    margin-top: 28px;    
+    left: auto;
+    transform: none;
     scale: 0.9;
     display: grid;
     grid-template-areas:
         ".    up    ."
         "left center right"
         ".   down   .";
-    grid-template-columns: 80px 80px 80px;
-    grid-template-rows: 80px 80px 80px;
-    gap: 14px;
+    grid-template-columns: 110px 110px 110px;
+    grid-template-rows: 110px 110px 110px;
+    gap: 18px;
+justify-content: center;
     z-index: 1000;  /* فوق كل العناصر */
 }
 :fullscreen .nokia-controls {
@@ -264,9 +265,9 @@ canvas {
 .btn.center{ grid-area: center; }
 
 .btn {
-    width: 90px !important;
-    height: 90px !important;
-    font-size: 28px !important;
+    width: 110px !important;
+    height: 110px !important;
+    font-size: 36px !important;
     border-radius: 50% !important;
     cursor: pointer;
     background: #67FFAC;
@@ -275,13 +276,13 @@ canvas {
     align-items: center;
     justify-content: center;
     box-shadow:
-        inset -3px -3px 6px rgba(255,255,255,0.2),
-        inset  3px  3px 6px rgba(0,0,0,0.35);
+        inset -4px -4px 8px rgba(255,255,255,0.2),
+        inset  4px  4px 8px rgba(0,0,0,0.35);
 }
 
 .btn.center {
     background: #248652 !important;
-    font-size: 18px !important;
+    font-size: 22px !important;
     cursor: default;
 }
 
