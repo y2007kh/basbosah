@@ -39,10 +39,10 @@ function showScoreMessage() {
 
 // ================== رسائل الدعم ==================
 function getSupportMessage(score) {
-    if (score === 0) return "اي الاسكور دا التعبان مات وهو جعان 🤔";
+    if (score === 0) return " 🤔 اي الاسكور دا التعبان مات وهو جعان";
     if (score === 1) return "😉🫶🏻 بوسي واحده بس ";
     if (score === 5) return "😍 د اليوم اللي اتولدت فيه بسبوسه ";
-    if (score < 5) return "🤍 خطوات صغيرة، بس في الاتجاه الصح 🤍";
+    if (score < 5) return "🤍 خطوات صغيرة، بس في الاتجاه الصح ";
     if (score === 8) return " 🤔 ده الشهر اللي انا اتولدت فيه";
     if (score < 10) return " 👏واضح إنك بتتعلمي وبتحاولي";
     if (score === 10) return "😍 ده الشهر اللي اتولدت فيه بسبوسة";
@@ -339,6 +339,7 @@ document.addEventListener("touchend", function (e) {
         }
     }
 }, { passive: true });
+
 
 
 
