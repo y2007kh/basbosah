@@ -182,13 +182,14 @@ for (let i = 1; i < snake.length; i++) {
 }
         // أكل
     function isEating(head, food) {
-    return Math.abs(head.x - food.x) < grid &&
-           Math.abs(head.y - food.y) < grid;
+    return head.x === food.x && head.y === food.y;
 }
     // رسم الأكل
-    ctx.fillStyle = "#000";
-    ctx.fillRect(food.x, food.y, grid, grid);
-
+  ctx.fillStyle = "#ff4757";
+ctx.shadowColor = "#ff6b81";
+ctx.shadowBlur = 8;
+ctx.fillRect(food.x, food.y, grid, grid);
+ctx.shadowBlur = 0;
     // رسم التعبان (نوكيا)
     snake.forEach((part, i) => {
         ctx.fillStyle = i===0 ? "#0b6623" : "#1e8f3e";
