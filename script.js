@@ -94,21 +94,15 @@ function butterflies(x, y) {
 }
 
 
-const sidebar = document.getElementById("sidebar");
-
-if (sidebar) {
-    // العنصر موجود
-    sidebar.style.left = "0";
-} else {
-    console.log("العنصر sidebar غير موجود");
-}
 const lastLine = document.querySelector(".poem .last-line");
+const audioArea = document.getElementById("audioArea");
 
-if (lastLine) {
+if (lastLine && audioArea) {
     lastLine.addEventListener("animationend", () => {
-        console.log("الأنيميشن انتهى");
+        audioArea.classList.add("show");
     });
 }
+
 
 
 
@@ -130,6 +124,7 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
 
 
 
