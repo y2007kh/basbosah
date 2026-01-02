@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    min-height: 90vh;
+    min-height: 100vh;
     padding: 24px;
 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
@@ -20,7 +20,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 120px;
 
     background: #ffffff;
     display: flex;
@@ -32,7 +32,7 @@ body {
 }
 
 .top-bar .title {
-    font-size: 28px;
+    font-size: 36px;
     letter-spacing: 0.5px;
     font-weight: 600;
     color: #8e6bbf;
@@ -43,14 +43,14 @@ body {
 /* ================== BOX ================== */
 .box {
     width: 90vw;                /* يملأ أغلب الشاشة */
-    max-width: 540px;           /* زيادة قليلة لتناسب شاشة Realme C75 (6.78 إنش) */
+    max-width: 90vw;           /* زيادة قليلة لتناسب شاشة Realme C75 (6.78 إنش) */
     padding: 36px 30px;
-    transform: translateY(-60px);
+    transform: translateY(-140px);
     background: rgba(255, 255, 255, 0.68);
     backdrop-filter: blur(7px);
     border-radius: 22px;
     box-shadow: 0 14px 36px rgba(150, 120, 200, 0.2);
-    margin: 50px auto 0;
+    margin: 140px auto 0;
     position: relative;   /* مهم لاحتواء أي عنصر داخلي */
     overflow: hidden;     /* يمنع أي خروج */
     text-align: center;
@@ -195,6 +195,7 @@ body {
 /* ================== EFFECTS ================== */
 .flower {
     position: fixed;
+        top: 119px; /* تغيير الـ top ليكون 40% من أعلى الصفحة */
     animation-name: fall;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
@@ -217,10 +218,10 @@ body {
 /* ================== SIDEBAR ================== */
 .sidebar {
     position: fixed;
-    top: 80px; /* تحت الـ top bar */
-    left: -250px;
-    width: 250px;
-    height: calc(100% - 80px);
+    top: 120px; /* تحت الـ top bar */
+    left: -290px;
+    width: 290px;
+    height: calc(100% - 120px);
 
     background: #8e6bbf;
     padding-top: 30px;
@@ -380,6 +381,7 @@ body {
 .social-icons img:hover {
     transform: scale(1.2);
 }
+
 
 
 
