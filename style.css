@@ -1,13 +1,13 @@
-body {
+﻿body {
     margin: 0;
     min-height: 100vh;
-    padding: 24px;
+    padding: 14px;
 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
     background: linear-gradient(
         180deg,
-        #f3e8ff 0%,
-        #fde7f3 100%
+        #FFFFFF 0%,
+        #AA3359 100%
     );
 
     color: #222;
@@ -20,7 +20,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 200px;
 
     background: #ffffff;
     display: flex;
@@ -32,41 +32,81 @@ body {
 }
 
 .top-bar .title {
-    font-size: 36px;
+    font-size: 58px;
     letter-spacing: 0.5px;
     font-weight: 600;
-    color: #8e6bbf;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #800020;
     font-family: "Cairo", sans-serif;
 }
 
+.top-bar .fixed {
+  white-space: nowrap;
+}
+
+/* المهم هنا */
+.top-bar .typing-wrapper {
+  width: 8ch;      /* ثبّت العرض */
+  display: inline-block;
+    text-align: left;
+
+}
+
+.top-bar #typing {
+  color: #F0A8C4;
+  border-right: 3px solid #F0A8C4;
+  padding-right: 6px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { border-color: transparent; }
+  25%, 75% { border-color: #AA3359; }
+}
 
 /* ================== BOX ================== */
 .box {
-    width: 90vw;                /* يملأ أغلب الشاشة */
-    max-width: 90vw;           /* زيادة قليلة لتناسب شاشة Realme C75 (6.78 إنش) */
-    padding: 36px 30px;
-    transform: translateY(-140px);
+    width: 90vw;
+    max-width: 90%;
+    padding: 38px 32px;
+
     background: rgba(255, 255, 255, 0.68);
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(8px);
     border-radius: 22px;
-    box-shadow: 0 14px 36px rgba(150, 120, 200, 0.2);
-    margin: 140px auto 0;
-    position: relative;   /* مهم لاحتواء أي عنصر داخلي */
-    overflow: hidden;     /* يمنع أي خروج */
+    box-shadow: 0 14px 36px rgba(240, 168, 196, 1);
+
+    /* التوسيط */
+    margin: 260px auto 0; /* 110 top-bar + 40 مسافة */
+
+    position: relative;
+    overflow: hidden;
     text-align: center;
-    animation: fadeUp 0.8s ease;
+
+    /* Fade خفيف فقط */
+    opacity: 0;
+    animation: softFade 0.8s ease forwards;
+}
+@keyframes softFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* ================== TITLES ================== */
 #truthTitle {
-    font-size: clamp(28px, 12vw, 36px);  /* زيادة لجعل العنوان أكبر */
+    font-size: clamp(32px, 12vw, 40px);  /* زيادة لجعل العنوان أكبر */
     opacity: 0.6;
     margin-bottom: 30px;
 }
 
 /* ================== TEXT ================== */
 .fade-text {
-    font-size: clamp(26px, 11vw, 34px);  /* زيادة للنص الرئيسي */
+    font-size: clamp(30px, 15vw, 44px);  /* زيادة للنص الرئيسي */
+    color: #4A0E23;
     line-height: 1.9;
     opacity: 0;
     transform: translateY(8px);
@@ -79,7 +119,8 @@ body {
 }
 
 .fade-line {
-    font-size: clamp(26px, 8vw, 32px);  /* زيادة للسطر الآخر */
+    font-size: clamp(30px, 15vw, 44px);  /* زيادة للسطر الآخر */
+    color: #4A0E23;
     opacity: 0;
     transform: translateY(8px);
     transition: opacity 1.4s ease, transform 1.4s ease;
@@ -92,27 +133,30 @@ body {
 
 /* ================== SOFT TEXT ================== */
 .soft {
-    color: #4a3b5a;
-    font-size: clamp(24px, 5.5vw, 30px);  /* زيادة للنص الخفيف */
+    color: #4A0E23;
+    font-size: clamp(26px, 15vw, 42px);  /* زيادة للنص الخفيف */
+    text-align: center;
+
 }
 
 .kio {
-    color: #4a3b5a;
-    font-size: clamp(28px, 7vw, 34px);  /* زيادة للنص الخفيف */
+    color: #4A0E23;
+    font-size: clamp(30px, 15vw, 44px); /* زيادة للنص الخفيف */
+        text-align: center;
 }
 
 /* ================== BUTTON ================== */
 .btn {
     margin-top: 26px;
-    padding: 20px 46px;  /* زيادة padding قليلاً للزر */
+    padding: 24px 38px;  /* زيادة padding قليلاً للزر */
 
-    background: #8e6bbf;
+    background: #800020;
     color: #ffffff;
 
     border: none;
     border-radius: 30px;
 
-    font-size: clamp(20px, 6vw, 23px);  /* زيادة للزر */
+    font-size: clamp(24px, 15vw, 46px);  /* زيادة للزر */
     font-family: "Cairo", sans-serif;
 
     cursor: pointer;
@@ -121,7 +165,7 @@ body {
 
 .btn:hover {
     transform: translateY(-2px);
-    background: #9d7fd1;
+    background: #F0A8C4;
 }
 
 .btn:active {
@@ -129,13 +173,13 @@ body {
 }
 .poem {
     font-family: "Amiri", "Cairo", serif;
-    color: #4a3b5a;
+    color: #4A0E23;
 
-    font-size: clamp(24px, 6.5vw, 32px);
+    font-size: clamp(26px, 15vw, 44px);
     line-height: 2;
     text-align: center;
     margin-bottom: 24px;
-    padding: 20px 16px;
+    padding: 20px 20px;
     position: relative;
 }
 
@@ -165,7 +209,7 @@ body {
     }
 }
 .last-line {
-    animation: fadeIn 2s forwards;
+    animation: fadeIn 12s forwards;
 }
 
 @keyframes fadeIn {
@@ -180,10 +224,10 @@ body {
     align-items: center;
 
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(14px);
     pointer-events: none;
 
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .audio-area.show {
@@ -191,11 +235,37 @@ body {
     transform: translateY(0);
     pointer-events: auto;
 }
+.audio-box {
+  background: #f3e9fb;
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
 
+.audio-box button {
+  background: #800020;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.audio-box input[type="range"] {
+  flex: 1;
+  accent-color: #9b6bcc;
+}
 /* ================== EFFECTS ================== */
 .flower {
     position: fixed;
-        top: 119px; /* تغيير الـ top ليكون 40% من أعلى الصفحة */
+        top: 200px; /* تغيير الـ top ليكون 40% من أعلى الصفحة */
     animation-name: fall;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
@@ -211,20 +281,20 @@ body {
         opacity: 1;
     }
     100% {
-        transform: translateY(340px) rotate(360deg) scale(1.3);
+        transform: translateY(590px) rotate(360deg) scale(1.3);
         opacity: 0;
     }
 }
 /* ================== SIDEBAR ================== */
 .sidebar {
     position: fixed;
-    top: 120px; /* تحت الـ top bar */
-    left: -290px;
-    width: 290px;
-    height: calc(100% - 120px);
-
-    background: #8e6bbf;
-    padding-top: 30px;
+    top: 180px; /* تحت الـ top bar */
+    left: -390px;
+    width: 390px;
+    height: calc(100% - 200px);
+    gap: 18px;
+    background: #FFFFFF;
+    padding-top: 20px;
     transition: left 0.3s ease;
     z-index: 999;
 }
@@ -240,10 +310,10 @@ body {
 
 .sidebar ul li a {
     display: block;
-    padding: 16px 24px;
+    padding: 18px 26px;
 
-    font-size: 20px;
-    color: #ffffff;
+    font-size: 38px;
+    color: #4A0E23;
     text-decoration: none;
     font-family: "Cairo", sans-serif;
 
@@ -256,22 +326,22 @@ body {
 
 .menu-btn {
     position: fixed;
-    top: 22px;
-    left: 18px;
+    top: 44px;
+    left: 34px;
 
     background: transparent;
     border: none;
-    font-size: 32px;
-    color: #8e6bbf;
+    font-size: 70px;
+    color: #4A0E23;
     cursor: pointer;
     z-index: 1100;
 
     font-family: "Cairo", sans-serif;
 }
 .credit {
-    margin-top: 24px;
-    font-size: 16px;
-    color: #8e6bbf;
+    margin-top: 46px;
+    font-size: 60px;
+    color: #FFFFFF;
     text-align: center;
     font-family: "Cairo", sans-serif;
     opacity: 0.8;
@@ -310,89 +380,3 @@ body {
         transform: translateY(0);
     }
 }
-
-
-
-.under-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-    text-align: center;
-}
-
-.under-img {
-    max-width: 90%;
-    height: auto;
-    border-radius: 16px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
-    margin-bottom: 30px;
-}
-
-.under-img.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* السهم أسفل الصفحة */
-.down-arrow {
-    font-size: 50px;
-    text-align: center;
-    margin-top: 20px;
-    animation: bounce 1.5s infinite;
-    color: #8e6bbf;
-}
-
-/* أنيميشن السهم */
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(15px); }
-}
-
-
-.contact-us {
-    background-color: /*black*/  rgba(142, 107, 191, 0.85);
-    color: white;
-    padding: 40px 20px;
-    margin-top: 50px;
-    border-radius: 22px;
-    text-align: center;
-}
-
-.contact-us h2 {
-    font-size: clamp(24px, 6vw, 30px);
-    margin-bottom: 25px;
-}
-
-.social-icons a {
-    margin: 0 15px;
-    display: inline-block;
-}
-
-.social-icons img {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    transition: transform 0.3s;
-}
-
-.social-icons img:hover {
-    transform: scale(1.2);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
