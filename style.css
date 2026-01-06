@@ -48,7 +48,7 @@
 
 /* المهم هنا */
 .top-bar .typing-wrapper {
-  width: 8ch;      /* ثبّت العرض */
+  width: 10ch;      /* ثبّت العرض */
   display: inline-block;
     text-align: left;
 
@@ -380,3 +380,4 @@
         transform: translateY(0);
     }
 }
+
