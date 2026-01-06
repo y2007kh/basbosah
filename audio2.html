@@ -8,7 +8,12 @@
 <body>
 
 <div class="top-bar">
-    <div class="title">basbosah ali</div>
+  <div class="title">
+    <span class="fixed">This space believes in </span>
+    <span class="typing-wrapper">
+      <span id="typing"></span>
+    </span>
+  </div>
 </div>
 
 <button class="menu-btn" onclick="toggleSidebar()">☰</button>
@@ -31,23 +36,26 @@
         </ul>
     </div>
 
+<audio id="soundCreative" src="audio/1.m4a"></audio>
+<audio id="soundNotCreative" src="audio/2.m4a"></audio>
     
     <div class="box">
     <p class="kio">🐱ميــاااووو</p>
         <audio controls>
             <source src="audio/audio2.m4a" type="audio/mpeg">
         </audio>
-        <button class="btn"
-            onclick="butterflies(event.clientX, event.clientY); setTimeout(()=>location.href='page3.html',350)">
-            كيريتيف صحح ؟ ولو م صح كملي برضـو
-        </button>
+  <p class="kio">ـ</p>
+            <button class="btn" onclick="playAndGo('soundCreative', this)">
+    كــيريــٍيتــِف و تــحفـهه
+</button>
+
+<button class="btn" onclick="playAndGo('soundNotCreative', this)">
+    مـش كيـريـيـتف خالـــص
+</button>
+
 </div>
 
 <script src="script.js"></script>
+<script src="audio.js"></script>
 </body>
 </html>
-
-
-
-
-
