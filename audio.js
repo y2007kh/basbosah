@@ -1,5 +1,5 @@
-  const lastLine = document.querySelector(".poem span:last-child");
-    const audioArea = document.getElementById("audioArea");
+const lastLine = document.querySelector(".poem span:last-child");
+const audioArea = document.getElementById("audioArea");
 
     lastLine.addEventListener("animationend", () => {
         audioArea.classList.add("show");
@@ -25,7 +25,7 @@ audio.ontimeupdate = () => {
 progress.oninput = () => {
   audio.currentTime = (progress.value / 100) * audio.duration;
 };
-﻿function playAndGo(soundId, btn) {
+function playAndGo(soundId, btn) {
     const sound = document.getElementById(soundId);
 
     // تأثير الفراشات
@@ -48,3 +48,34 @@ progress.oninput = () => {
         location.href = "page3.html";
     };
 }
+const words = ["your smile", "Basmala", "You", "basbosah", "flowers", "Bosy"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.getElementById("typing");
+
+function typeEffect() {
+  const currentWord = words[wordIndex];
+
+  if (isDeleting) {
+    typingElement.textContent =
+      currentWord.substring(0, charIndex--);
+  } else {
+    typingElement.textContent =
+      currentWord.substring(0, charIndex++);
+  }
+
+  if (!isDeleting && charIndex === currentWord.length + 1) {
+    setTimeout(() => isDeleting = true, 1000);
+  }
+
+  if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+  }
+
+  setTimeout(typeEffect, isDeleting ? 60 : 120);
+}
+
+typeEffect();
+
