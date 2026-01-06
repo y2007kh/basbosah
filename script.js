@@ -125,13 +125,33 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+const words = ["your smile", "Basmala", "You", "basbosah", "flowers", "Bosy"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.getElementById("typing");
 
+function typeEffect() {
+  const currentWord = words[wordIndex];
 
+  if (isDeleting) {
+    typingElement.textContent =
+      currentWord.substring(0, charIndex--);
+  } else {
+    typingElement.textContent =
+      currentWord.substring(0, charIndex++);
+  }
 
+  if (!isDeleting && charIndex === currentWord.length + 1) {
+    setTimeout(() => isDeleting = true, 1000);
+  }
 
+  if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+  }
 
+  setTimeout(typeEffect, isDeleting ? 60 : 120);
+}
 
-
-
-
-
+typeEffect();
