@@ -11,16 +11,13 @@
 <div id="startScreen" class="start-screen">
     <p class="nokia">NOKIA</p>
     <p class="tagline">Connecting People</p>
-
+    <button onclick="startGame()">START</button>
     <div class="swipe-hint">
         <div class="hand">👆</div>
         <div class="arrows">↑ ↓ ← →</div>
         <p>اسحب لتغيير الاتجاه</p>
     </div>
-
-    <button onclick="startGame()">START</button>
 </div>
-
 
 <!-- شاشة اختيار السرعة -->
 <div id="speedScreen" class="speed-screen hidden">
@@ -30,46 +27,24 @@
     <button onclick="setSpeedAndStart('fast')">Fast</button>
 </div>
 
+
 <!-- اللعبة -->
 <div id="gameContainer" class="hidden">
     <h2>Snake 🐍</h2>
     <canvas id="gameCanvas" width="600" height="600"></canvas>
     <p id="score">النقاط: 0</p>
     <p id="scoreMessage" style="display:none; color:#ff4757; font-weight:bold; margin-left:10px;"></p>
-    <button id="fullscreenBtn" onclick="enterFullscreen()">
-        ⛶ ملء الشاشة
-    </button>
-
-    <!-- أزرار التحكم (D-pad layout) -->
-<div class="nokia-controls" id="controls">  <!-- أزل "hidden" إذا كانت مخفية -->
-    <!-- الأزرار مباشرة داخل الـ div، بدون control-row -->
-    <button class="btn up" id="up-btn">↑</button>
-    <button class="btn left" id="left-btn">←</button>
-    <button class="btn center" id="center-btn">OK</button>  <!-- أضف زر center -->
-    <button class="btn right" id="right-btn">→</button>
-    <button class="btn down" id="down-btn">↓</button>
-</div>
 
 </div>
-
 
 <!-- شاشة النهاية -->
-    <div id="gameOverScreen" class="game-over hidden">
-    <p id="gameOverMessage">GAME OVER</p>
-    <p id="finalScore">Score: 0</p>
-    <button class="back-btn" onclick="restartGame()">🔁 Restart</button>
+<div id="gameOverScreen" class="game-over hidden">
+    <p>GAME OVER</p>
+    <p>Score: <span id="finalScore">0</span></p>
+    <button onclick="restartGame()">Restart</button>
     <button class="back-btn" onclick="closeGameIframe()">⬅ خروج</button>
 </div>
 
 <script src="snake.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
