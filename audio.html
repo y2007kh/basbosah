@@ -36,31 +36,40 @@
         </ul>
     </div>
 
-    <div class="box">
-       <p class="poem">
-    <span>أيا مَن لِعَينَي حينَ تَلقاكَ بَهجَةٌ</span>
-    <span>والرُّوحُ تَسْكُنُ حيثُ كُنتَ مَقامَا</span>
-    <span>إن قُلتُ إنّي في هَواكَ مُتيَّمٌ</span>
-    <span class="last-line">فالعُذرُ أنّكَ قَد مَلَكتَ غِرامَا</span>
+ <div class="box">
+ <p class="poem">
+    <span>أتيتُ نحوكَ لمّا الدّهر أتعبَني</span>
+    <span>فما لبثتُ وزادت بي جِراحاتي</span>
+    <span>وإنّي أتيتُك بأشتاتي لتجمعها</span>
+    <span class="last-line">مالي أراكَ قد شتّتَ أشتاتي؟</span>
 </p>
 
 <div class="audio-area" id="audioArea">
-    <audio controls>
-        <source src="audio/audio.mp3" type="audio/mpeg">
-    </audio>
+    <div class="audio-box">
+        <button id="playBtn">▶️</button>
+        <input type="range" id="progress" value="0">
+        <audio id="audio">
+            <source src="audio/audio.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 
     <button class="btn"
- onclick="butterflies(event.clientX, event.clientY);
-          setTimeout(()=>location.href='truth.html',350)">
-    كمّلي لما تحبي
-</button>
+        onclick="butterflies(event.clientX, event.clientY);
+        setTimeout(()=>location.href='truth.html',350)">
+        كمّلي لما تحبي
+    </button>
+</div>
+
+
+    
 
 
     </div>
- </div>
 <script src="script.js"></script>
+<script src="audio.js"></script>
 </body>
 </html>
+
 
 
 
